@@ -11,9 +11,7 @@
 .search {
     flex: 0 0 40%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
 
     &__input {
         font-family: inherit;
@@ -108,7 +106,7 @@
         color: #fff;
 
         // flexbox also works with text inside, with no html children
-        display: flex;justify-content: center;align-items: center;
+        @include flex-center;
     }
 
     &__user-photo {
@@ -195,4 +193,122 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+}
+
+////////////////////////////////////////////////////////
+// GALLERY
+
+.gallery {
+    display: flex;
+
+    &__photo {
+        width: 100%;
+        display: block; // dajemy to bo gdy jest normalnie inline, zostawia jakas dziwna przestrzen
+        // pod spodem no a my chcemy tego uniknac, wiec gdy photo raczej display: block;
+    }
+}
+
+////////////////////////////////////////////////////////
+// HOTEL OVERVIEW
+
+.overview {
+    display: flex;
+    border-bottom: 1px solid var(--color-grey-light-2);
+    align-items: center;
+
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+        // dajemy tutaj padding zeby oddzielic troche nie jakis margin bo, chcemy zeby
+        // w sumie nasz h1 byl duzy zeby mozna bylo go zobaczyc a przy paddingu wlasnie
+        // mozemy to zrobic
+    }
+
+    &__stars {
+        // flex: 1;
+        display: flex;
+        // usuwamy dziwna przerwe pod elementami, bo zachowuja sie jak text, czyli maja cos takiego
+        // a gdy jest df to nie ma tego :D
+
+        margin-right: auto;
+        // to samo co flex: 1; natomiast no nie mamy elementu rozciagnietego na caly
+        // tylko jest tam margin MEEEGA FAJNE
+        // i tak przesuwa wszystkie inne elementy, bo auto czyli tyle ile moze max miec
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+    }
+
+    &__location {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-location {
+        margin-right: .5rem;
+    }
+
+    &__rating {
+        background-color: var(--color-primary);
+        align-self: stretch;
+        margin-left: 3rem;
+        color: #fff;
+        padding: 0 2.25rem;
+        @include flex-center;
+        flex-direction: column;
+    }
+
+    &__rating-average {
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin-bottom: -3px;
+    }
+
+    &__rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+}
+
+////////////////////////////////////////////////////////
+// BUTTON INLINE
+
+.btn-inline {
+    border: none;
+    color: var(--color-primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    background-color: transparent;
+    padding-bottom: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+        color: var(--color-grey-dark-1);
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+@keyframes pulsate {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    } 50% {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba($color: #000000, $alpha: .25);
+    }
 }
