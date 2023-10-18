@@ -213,7 +213,7 @@
 
 .overview {
     display: flex;
-    border-bottom: 1px solid var(--color-grey-light-2);
+    border-bottom: var(--line);
     align-items: center;
 
     &__heading {
@@ -310,5 +310,82 @@
     } 50% {
         transform: scale(1.05);
         box-shadow: 0 1rem 4rem rgba($color: #000000, $alpha: .25);
+    }
+}
+
+////////////////////////////////////////////////////////
+// PARAGRAPH
+
+.paragraph:not(:last-of-type) { //last-child nie dziala bo paragraph nie jest ostatnim dzieckiem
+                                // naszego containera, wiec dajemy tylko ze ostatni taki typ
+    margin-bottom: 2rem;
+}
+
+////////////////////////////////////////////////////////
+// LIST
+
+.list {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            height: 1rem;
+            width: 1rem;
+            margin-right: .7rem;
+
+            // older browsers
+            // background-image: url(../img/SVG/chevron-thin-right.svg);
+            // background-size: cover;
+            // we can not set the fill property
+
+            // newer browsers
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/SVG/chevron-thin-right.svg);
+            mask-image: url(../img/SVG/chevron-thin-right.svg);;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+
+        }
+    }
+}
+
+////////////////////////////////////////////////////////
+// RECOMMEND
+
+.recommend {
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__count {
+
+    }
+
+    &__friends {
+
+    }
+
+    &__photo {
+        box-sizing: content-box; // zeby border nie wchodzil w width ani height, tylko byl na zewnatrz
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+
+        &:not(:last-child) {
+            margin-right: -1.5rem;
+        }
     }
 }
