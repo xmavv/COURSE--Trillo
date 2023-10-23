@@ -127,6 +127,38 @@
         @include flex-center;
     }
 
+    &__user {
+        position: relative;
+    }
+
+    &__user:hover::before{
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    &__user::before {
+        content: 'Settings';
+        font-size: 1.7rem;
+        @include flex-center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: var(--color-grey-light-2);
+        background-image: url(../img/SVG/cog.svg);
+        background-repeat: no-repeat;
+        background-size: 15%;
+        background-position: right;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0);
+        transform-origin: top;
+        transition: all .1s ease;
+    }
+
     &__user-photo {
         height: 3.75rem;
         border-radius: 50%;
