@@ -299,9 +299,29 @@ body {
 
 .gallery {
   display: flex; }
+  .gallery__item {
+    overflow: hidden;
+    position: relative; }
   .gallery__photo {
+    transform: scale(1);
     width: 100%;
-    display: block; }
+    display: block;
+    transition: all .5s ease; }
+  .gallery__caption {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    color: #fff;
+    opacity: 0;
+    transition: all .2s ease; }
+  .gallery__item:hover .gallery__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .gallery__item:hover .gallery__photo {
+    filter: blur(0.3rem) brightness(50%);
+    transform: scale(1.03); }
 
 .overview {
   display: flex;
@@ -339,6 +359,9 @@ body {
     width: 1.75rem;
     height: 1.75rem;
     fill: var(--color-primary); }
+  .overview__icon-star--empty {
+    fill: none;
+    stroke: var(--color-primary); }
   .overview__location {
     font-size: 1.2rem;
     display: flex;
