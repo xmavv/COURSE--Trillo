@@ -4,9 +4,11 @@ deploy
 readme
 
 po najechaniu na uzytkownika zeby sie jakis panel otwieral
-po kliknieciu na chat tez jakies wiadomosci
 input searching jakies sugestie ze cos wyszukuje
+
+prevent default jak klikasz na input prawa strone bo sie rozjezdza
 
 DONE:
 
 figcaption while we hover the img
+po kliknieciu na chat tez jakies wiadomosci

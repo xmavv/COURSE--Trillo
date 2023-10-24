@@ -1,0 +1,53 @@
+////////////////////////////////////////////////////////
+// INPUT
+
+.input-width {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-grey-light-2);
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 10rem;
+    width: 90%;
+    transition: all .2s ease-in-out;
+    margin-right: -3.25rem;
+    
+    &:focus {
+        outline: none;
+        width: 100%;
+        background-color: var(--color-grey-light-3);
+
+        @include respond ($bp-smallest) {
+            background-color: var(--color-grey-light-2);
+        }
+    }
+
+    &::-webkit-input-placeholder, 
+    &::placeholder {
+        font-weight: 100;
+        color: var(--color-grey-dark-2);
+    }
+}
+
+.input-width:focus + .button-glass {
+    background-color: var(--color-grey-light-3);
+
+    @include respond ($bp-smallest) {
+        background-color: var(--color-grey-light-2);
+    }
+}
+
+.button-glass {
+    border: none;
+    background-color: var(--color-grey-light-2);
+    transition: all .2 ease;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+}
