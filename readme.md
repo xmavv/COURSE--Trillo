@@ -6,7 +6,7 @@
 
 ## Whad did I add
 - captions and effects on gallery
-- 
+- chatbox interactions
 - 
 - 
 - 

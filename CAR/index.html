@@ -7,6 +7,8 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+        <script defer src="../app.js"></script>
         
         <title>trillo &mdash; Your all-in-one booking app</title>
     </head>
@@ -16,8 +18,8 @@
                 <img src="../img/logo.png" alt="trillo app logo" class="logo">
 
                 <form action="#" class="search">
-                    <input type="text" class="search__input" placeholder="Search hotels">
-                    <button class="search__button" type="button">
+                    <input type="text" class="input-width" placeholder="Search hotels">
+                    <button class="button-glass" type="button">
 
                         <svg class="search__icon">
                             <use xlink:href="../img/sprite.svg#icon-magnifying-glass"></use>
@@ -269,5 +271,53 @@
             </div>
             
         </div>
+
+        <div class="chat d-none">
+            <div class="chat__head">
+
+                <img src="../img/user-5.jpg" alt="Chat user" class="chat__head-photo">
+
+                <p class="chat__head-name">Michael Scott</p>
+
+                <span class="chat__head-min">_</span>
+                <span class="chat__head-close">X</span>
+
+            </div>
+
+            <div class="chat__content">
+
+                <div class="chat__content-box">
+                    <p class="chat__content-text">That's what she said</p>
+                </div>
+
+                <div class="chat__content-box">
+                    <p class="chat__content-text chat__content-text--user">QUESTION</p>
+                </div>
+
+                <div class="chat__content-box">
+                    <p class="chat__content-text chat__content-text--user">ITS DWIGHT</p>
+                </div>
+
+                <div class="chat__content-box">
+                    <p class="chat__content-text chat__content-text--user">HELLO MICHAEL</p>
+                </div>
+
+                <div class="chat__content-box">
+                    <p class="chat__content-text chat__content-text--user">I would like to make a complaint</p>
+                </div>
+
+            </div>
+
+            <div class="chat__input-box">
+
+                <input type="text" placeholder="Type your message" class="input-width">
+
+                <svg class="overview__icon-location">
+                    <use xlink:href="../img/sprite.svg#icon-chevron-thin-right"></use>
+                </svg>
+
+            </div>
+        </div>
+
     </body>
 </html>

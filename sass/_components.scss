@@ -674,13 +674,14 @@
 .chat {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: fixed;
     width: 30rem;
     height: 35rem;
     right: 5%;
     bottom: 0;
     font-size: 1.5rem;
+    z-index: 100;
 
     &__head {
         height: 5rem;
@@ -701,6 +702,7 @@
         }
 
         &-min,
+        &-max,
         &-close {
             cursor: pointer;
             font-size: 2rem;
