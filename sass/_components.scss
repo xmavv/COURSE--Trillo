@@ -10,6 +10,7 @@
 // SEARCH
 .search {
     flex: 0 0 40%;
+    position: relative;
 
     @include flex-center;
 
@@ -238,7 +239,7 @@
     }
     
     &__photo {
-        transform: scale(1);
+        transform: scale(1.2);
         width: 100%;
         display: block; // dajemy to bo gdy jest normalnie inline, zostawia jakas dziwna przestrzen
         // pod spodem no a my chcemy tego uniknac, wiec gdy photo raczej display: block;\
@@ -695,18 +696,23 @@
             height: 3rem;
             border-radius: 50%;
             margin: 0 1.5rem;
+            cursor: pointer;
         }
 
         &-name {
             margin-right: auto;
+            cursor: pointer;
         }
 
         &-min,
-        &-max,
         &-close {
             cursor: pointer;
             font-size: 2rem;
             margin: 0 1.5rem;
+
+            &:hover {
+                color: var(--color-grey-light-4);
+            }
         }
     }
 
